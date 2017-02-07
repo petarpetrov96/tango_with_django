@@ -8,10 +8,10 @@
 {% block body_block %}
 	<h1>About Page</h1>
 	{% if registered %}
-		Rango says: <strong>thank you for registering!</strong>
+		Rango says: <strong>thank you for registering!</strong><br />
 		<a href="{% url 'index' %}">Return to the homepage.</a><br />
 	{% else %}
-		Rango says: <strong>register here!</strong>
+		Rango says: <strong>register here!</strong><br />
 		<form id="user_form" method="post" action="{% url 'register' %}" enctype="multipart/form-data">
 			{% csrf_token %}
 			{{ user_form.as_p }}

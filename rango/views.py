@@ -16,6 +16,7 @@ def index(request):
 	pages_list=Page.objects.order_by('-views')[:5]
 	context_dict = {'categories':category_list,'pages':pages_list}
 	visitor_cookie_handler(request)
+	context_dict['visits'] = request.session['visits']
 	return render(request,'rango/index.html',context=context_dict)
 
 def about(request):
